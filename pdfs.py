@@ -27,4 +27,4 @@ def request_form(form):
       actions.append(unicode(token.head.orth_) + u' ' + unicode(token.orth_))
 
 
-  return unicode(actions)
+  return json.dumps(actions)
