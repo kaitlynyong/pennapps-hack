@@ -1,0 +1,35 @@
+/* app css stylesheet */
+* {
+  font-family: Avenir;
+  line-height: 1.5; }
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em; }
+
+.menu:before {
+  content: "["; }
+
+.menu:after {
+  content: "]"; }
+
+#content {
+  background-image: url("http://i.imgur.com/TOuBzd2.jpg");
+  height: 50vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.box {
+  background-color: #ff69b4;
+  width: 100%;
+  padding: 25px;
+  border: 0px;
+  margin: 0px; }
+
+.button {
+  background-color: #FFF; }
+
+/*# sourceMappingURL=app.css.map */
