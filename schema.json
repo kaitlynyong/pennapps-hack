@@ -1,0 +1,10 @@
+{
+  "instructions": "text",
+  "inputs": [
+    {
+      "type": "checkbox|text|textarea|radio|date|address|signature",
+      "name": "text",
+      "coordinates": ["float", "float"]
+    }
+  ]
+}
