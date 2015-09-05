@@ -36,7 +36,10 @@ def request_form(form):
   actions = []
   for verb in verbs:
     action = ' '.join([t.orth_ for t in verb.subtree])
-    actions.append(action)
+    action = action.replace(u"\u2018", "").replace(u"\u2019", "").replace(u"\u201c","").replace(u"\u201d", "").replace(u"\u2014", "-")
+
+    if len(list(verb.subtree)) > 1:
+      actions.append(action)
 
   for action in actions:
     new_input = {
