@@ -1,6 +1,14 @@
 /* app css stylesheet */
 body {
-  background: pink; }
+  background: #f3f3f3; }
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Lora;
+  font-weight: 100;
+  line-height: 1.5;
+  color: #333; }
 
 .menu {
   list-style: none;
@@ -34,5 +42,7 @@ body {
     height: 100%;
     width: 100%;
     position: relative; }
+  #step1 .dropBox.dragover {
+    background: #000; }
 
 /*# sourceMappingURL=app.css.map */
