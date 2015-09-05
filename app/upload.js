@@ -1,24 +1,11 @@
-'use strict';
+//inject angular file upload directives and services.
+var app = angular.module('fileUpload', ['ngFileUpload']);
 
-angular.module('myApp.view1', ['ngRoute'])
-
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
-    templateUrl: 'view1/view1.html',
-    controller: 'View1Ctrl'
-  });
-}])
-
-.controller('View1Ctrl', ['$scope', 'Upload', '$timeout', function ($scope, Upload, $timeout) {
-	$scope.lol = function(){
-		alert("numb");
-	};
-
-	$scope.uploadFiles = function(file) {
+app.controller('MyCtrl', ['$scope', 'Upload', '$timeout', function ($scope, Upload, $timeout) {
+    
+    $scope.uploadFiles = function(file) {
         $scope.f = file;
         console.log('done');
-        console.log(file);
-        console.log(file.$error);
         if (file && !file.$error) {
             file.upload = Upload.upload({
                 url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
@@ -42,7 +29,5 @@ angular.module('myApp.view1', ['ngRoute'])
         else{
             console.log('Error');
         }
-    };
-
-
+    }
 }]);
