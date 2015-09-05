@@ -1,5 +1,7 @@
 /* app css stylesheet */
 
+$pink : #F62459;
+
 body{
   background: #f3f3f3;
 }
@@ -39,6 +41,18 @@ body{
   content: "";
   padding: 0;
 }
+button{
+  padding: 0;
+  border:0;
+  background: transparent;      
+}
+.btn{
+  border-radius:30px;
+  padding: 8px 12px;
+  background:$pink;
+  color: #fff;
+  margin: 20px;
+}
 
 #step1{
   height: 100vh;
@@ -50,8 +64,18 @@ body{
     height: 100%;
     width: 100%;
     position: relative;
+
+    .text{
+      margin-top: 50%;
+      position: relative;
+      top:-400px;
+    }
+
   }
   .dropBox.dragover{
     background: #000;
   }
+
+
+
 }

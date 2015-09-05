@@ -33,6 +33,18 @@ body {
   content: "";
   padding: 0; }
 
+button {
+  padding: 0;
+  border: 0;
+  background: transparent; }
+
+.btn {
+  border-radius: 30px;
+  padding: 8px 12px;
+  background: #F62459;
+  color: #fff;
+  margin: 20px; }
+
 #step1 {
   height: 100vh;
   width: 100vw;
@@ -42,6 +54,10 @@ body {
     height: 100%;
     width: 100%;
     position: relative; }
+    #step1 .dropBox .text {
+      margin-top: 50%;
+      position: relative;
+      top: -400px; }
   #step1 .dropBox.dragover {
     background: #000; }
 

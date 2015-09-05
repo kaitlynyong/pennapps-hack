@@ -1,11 +1,9 @@
 <div id="step1">
 	<div ngf-drop="uploadFiles($files)" class="dropBox" ngf-drag-over-class="dragover" ngf-multiple="true" ngf-pattern="'image/*,application/pdf'">
-		<h1>Welcome to formfor.me</h1>
-
-			<h3>Drop a file anywhere on the screen or select the button below to get started</h3>
-		
-		<br>
-		<button type="file" ngf-select="uploadFiles($file)" accept="image/*"> Select to Upload File</button>
+		<div class="text">
+			<h2>Drop a file anywhere on the screen or select the button below to get started</h2>
+			<button class="btn" type="file" ngf-select="uploadFiles($file)" accept="image/*"> Select to Upload File</button>
+		</div>
   	</div>
 </div>
 
