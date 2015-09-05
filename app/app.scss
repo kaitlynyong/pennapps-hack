@@ -31,7 +31,6 @@ body{
 
 #content {
   background-image: url("images/back.jpg");
-  height: 50vh;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -78,7 +77,7 @@ button{
 }
 .btn:hover{
   border-radius:30px;
-  background: #F62459;;
+  background: #F62459;
   color: #fff;
   margin: 20px;
 }
