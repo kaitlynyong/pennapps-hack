@@ -28,14 +28,18 @@ body {
   height: 50vh;
   width: 100%;
   background-size: cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  padding-top: 250px;
+  padding-bottom: 250px;
+  text-align: center; }
 
 .box {
   background-color: #ff69b4;
   width: 100%;
   padding: 25px;
   border: 0px;
-  margin: 0px; }
+  margin: 0px;
+  text-align: center; }
 
 .button {
   background-color: #FFF; }
@@ -73,6 +77,14 @@ button {
   background: #B02044;
   color: #fff;
   margin: 20px; }
+
+.how-it-works {
+  background-color: #fff;
+  width: 100%;
+  padding: 25px;
+  border: 0px;
+  margin: 0px;
+  text-align: center; }
 
 #step1 {
   height: 100vh;
