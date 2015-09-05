@@ -4,7 +4,7 @@
     {
       "type": "checkbox|text|textarea|radio|date|address|signature",
       "name": "text",
-      "value": "text | boolean | number"
+      "value": "text | boolean | number",
       "coordinates": ["float", "float"]
     }
   ]
