@@ -1,5 +1,6 @@
 from spacy.en import English
 from slate import PDF
+import json
 
 nlp = English()
 
@@ -25,4 +26,5 @@ def request_form(form):
     if token.pos_ == 'NOUN' and token.head.orth_ in verbs:
       actions.append(unicode(token.head.orth_) + u' ' + unicode(token.orth_))
 
-  return str(unicode(actions))
+
+  return unicode(actions)
