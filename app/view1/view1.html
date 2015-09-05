@@ -1,6 +1,6 @@
-Lololol
-<p ng-click="lol()">This is the partial for view 1.</p>
-
-<button type="file" ngf-select="uploadFiles($file)"
-          accept="image/*"> Select to Upload File</button>
+<div id="step1">
+	<div ngf-drop="uploadFiles($files)" class="dropBox" ngf-drag-over-class="dragover" ngf-multiple="true" ngf-pattern="'image/*,application/pdf'">
+		<button type="file" ngf-select="uploadFiles($file)" accept="image/*"> Select to Upload File</button>
+  	</div>
+</div>
 
