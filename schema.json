@@ -2,7 +2,7 @@
   "instructions": "text",
   "inputs": [
     {
-      "type": "checkbox|text|textarea|radio|date|address|signature",
+      "type": "checkbox|text|textarea|radio|date|address|signature|currency",
       "name": "text",
       "value": "text | boolean | number",
       "coordinates": ["float", "float"]
