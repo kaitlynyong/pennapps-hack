@@ -1,5 +1,19 @@
 /* app css stylesheet */
 
+$pink :#F24671;
+
+body{
+  background: #f3f3f3;
+}
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Lato;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #666;
+  outline: none;
+}
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -27,4 +41,118 @@
 .menu > li:nth-child(1):before {
   content: "";
   padding: 0;
+}
+button{
+  padding: 0;
+  border:0;
+  background: transparent;      
+}
+.btn{
+  border-radius:30px;
+  padding: 8px 20px;
+  background:$pink;
+  color: #fff;
+  margin: 20px;
+  border-bottom: 2px solid #B02044;
+}
+.btn:hover{
+  border-radius:30px;
+  background: #F62459;;
+  color: #fff;
+  margin: 20px;
+}
+.btn:active{
+  border-radius:30px;
+  background:#B02044;
+  color: #fff;
+  margin: 20px;
+}
+
+#step1{
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  background: #F3F3F3;
+
+  .dropBox{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    padding-top: 250px;
+
+    .text, .afterUpload{
+      
+    }
+
+  }
+  .dropBox.dragover{
+    background: #000;
+  }
+
+}
+
+.progressBar{
+  width: 600px;
+  margin: auto;
+  border-radius: 10px;
+  background:#fff;
+  border:1px solid #eee;
+  overflow: hidden;
+  height: 10px;
+
+  .bar{
+    position: relative;
+    width: 0;
+    background: $pink;
+    height: 10px;
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    transition: all 2s ease;
+  }
+}
+
+.filesPreview{
+  max-width: 800%;
+  width: 80%;
+  background:#eee;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+
+  .filePreview{
+
+    img{
+      height: 40px;
+      margin-right: 5px;
+    }
+
+  }
+}
+
+.customForm{
+  width: 80%;
+  max-width: 800px;
+  padding-top: 250px;
+  margin:auto;
+  label, input{
+    display: block;
+    color: #ccc;
+  }
+  label{
+    font-size: 18px;
+  }
+  input{
+    background: transparent;
+    border:0;
+    font-size: 32px;
+  }
+  .current label{
+    color: #666;
+  }
+  .current input{
+    color: #111;
+  }
+  div.formField{
+    margin-bottom: 80px;
+  }
 }

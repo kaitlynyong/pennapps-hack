@@ -14,6 +14,9 @@ angular.module('myApp.view1', ['ngRoute'])
 		alert("numb");
 	};
 
+    $scope.f;
+    $scope.myForm;
+    
 	$scope.uploadFiles = function(file) {
         $scope.f = file;
         console.log('done');
@@ -37,6 +40,7 @@ angular.module('myApp.view1', ['ngRoute'])
             file.upload.progress(function (evt) {
                 file.progress = Math.min(100, parseInt(100.0 * 
                                                        evt.loaded / evt.total));
+                console.log(file.progress);
             });
         }   
         else{
