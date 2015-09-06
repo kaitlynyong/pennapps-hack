@@ -67,7 +67,7 @@ button{
   border:0;
   background: transparent;      
 }
-.btn{
+.btnCustom{
   border-radius:30px;
   padding: 8px 20px;
   background:$pink;
@@ -75,18 +75,18 @@ button{
   margin: 20px;
   border-bottom: 2px solid #B02044;
 }
-/*.btn:hover{
+.btnCustom:hover{
   border-radius:30px;
   background: #F62459;
   color: #fff;
   margin: 20px;
 }
-.btn:active{
+.btnCustom:active{
   border-radius:30px;
   background:#B02044;
   color: #fff;
   margin: 20px;
-}*/
+}
 
 .how-it-works{
     background-color: #fff;

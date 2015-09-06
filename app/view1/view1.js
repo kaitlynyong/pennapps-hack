@@ -94,7 +94,7 @@ function ($scope, Upload, $timeout, $http, focus) {
             });
         }
     };
-    $scope.formExamples = ["f990sn-14", "f1099a-15", "f1120w15", "fw10_accessible" ]
+    $scope.formExamples = ["f990sn-14", "f1099a-15", "f1120w15", "fw10" ]
 
     
 	$scope.uploadFiles = function(file) {
