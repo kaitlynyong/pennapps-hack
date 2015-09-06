@@ -66,7 +66,7 @@ function ($scope, Upload, $timeout, $http, focus, $window) {
 
     $scope.languages = {
         english: "en",
-        spanish: "en-us",
+        spanish: "en-es",
         french: "en-fr",
         korean: "en-ko",
         japanese: "en-ja"
