@@ -150,6 +150,17 @@ function ($scope, Upload, $timeout, $http, focus) {
 
     $scope.submitForm = function(){
         console.log("sent");
+
+        // $.ajax({
+        //   url:'http://formforme.cloudapp.net:5000/'+$scope.formName,
+        //   type:"POST",
+        //   data:$scope.formData,
+        //   contentType:"application/json; charset=utf-8",
+        //   dataType:"json",
+        //   success: function(data){
+        //     console.log( "Data Loaded: " + data );
+        //   }
+        // })
         
         $.post( 'http://formforme.cloudapp.net:5000/'+$scope.formName, $scope.formData)
           .done(function( data ) {
