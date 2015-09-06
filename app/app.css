@@ -134,6 +134,12 @@ button {
     width: 80%;
     max-width: 220px;
     margin: auto; }
+  .how-it-works p.biggie {
+    max-width: 1000px !important;
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 16px;
+    margin-bottom: 20px; }
 
 #step1 {
   height: 100vh;
