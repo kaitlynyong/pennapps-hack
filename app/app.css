@@ -65,18 +65,18 @@ button {
   margin: 20px;
   border-bottom: 2px solid #B02044; }
 
-.btn:hover {
-  border-radius: 30px;
+/*.btn:hover{
+  border-radius:30px;
   background: #F62459;
   color: #fff;
-  margin: 20px; }
-
-.btn:active {
-  border-radius: 30px;
-  background: #B02044;
+  margin: 20px;
+}
+.btn:active{
+  border-radius:30px;
+  background:#B02044;
   color: #fff;
-  margin: 20px; }
-
+  margin: 20px;
+}*/
 .how-it-works {
   background-color: #fff;
   width: 100%;
