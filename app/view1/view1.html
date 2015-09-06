@@ -32,13 +32,13 @@
 <div id="step2">
 	<form class="customForm">
 	<ol>
-		<div class="formField" ng-repeat="formInput in formData track by $index" ng-class="{current : $index==currentStep}" ng-click="makeCurrentStep($index)">
+		<div class="formField" ng-repeat="formInput in formData.inputs track by $index" ng-class="{current : $index==currentStep}" ng-click="makeCurrentStep($index)">
 			<li>
 			<label>{{formInput.name}}</label>
 			<input type="{{formInput.type}}" ng-model="formInput.value" id="input{{$index}}" my-enter="nextStep()"/>
 			</li>
 		</div>
 	</ol>
-	<button class="btn" ng-click="submitForm">Submit</button>
+	<button class="btn" ng-click="submitForm()">Submit</button>
 	</form>
 </div>

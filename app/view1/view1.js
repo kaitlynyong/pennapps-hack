@@ -116,7 +116,7 @@ function ($scope, Upload, $timeout, $http, focus) {
     $http.get('http://formforme.cloudapp.net:5000/f1120w15/en').
       then(function(response) {
         console.log("lol", response);
-        $scope.formData = response.data.inputs;
+        $scope.formData = response.data;
         focus('input'+$scope.currentStep);
       }, function(response) {
         console.log("chutiye");
@@ -124,5 +124,18 @@ function ($scope, Upload, $timeout, $http, focus) {
         // or server returns response with an error status.
     });
 
+    $scope.submitForm = function(){
+        console.log("sent");
+        $http.put('http://formforme.cloudapp.net:5000/f1120w15', {"message": "Rishabh"}).
+          then(function(response) {
+            console.log("success", response);
+            // this callback will be called asynchronously
+            // when the response is available
+          }, function(response) {
+            console.log("error", response);
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+    };
 
 }]);
