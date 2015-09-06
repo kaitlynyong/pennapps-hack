@@ -9,13 +9,59 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', ['$scope', 'Upload', '$timeout', function ($scope, Upload, $timeout) {
+.factory('focus', function($timeout, $window) {
+    return function(id) {
+      // timeout makes sure that it is invoked after any other event has been triggered.
+      // e.g. click events that need to run before the focus or
+      // inputs elements that are in a disabled state but are enabled when those events
+      // are triggered.
+      $timeout(function() {
+        var element = $window.document.getElementById(id);
+        if(element)
+          element.focus();
+      });
+    };
+  })
+
+.directive('eventFocus', function(focus) {
+    return function(scope, elem, attr) {
+      elem.on(attr.eventFocus, function() {
+        focus(attr.eventFocusId);
+      });
+
+      // Removes bound events in the element itself
+      // when the scope is destroyed
+      scope.$on('$destroy', function() {
+        elem.off(attr.eventFocus);
+      });
+    };
+  })
+
+.directive('myEnter', function () {
+    return function (scope, element, attrs) {
+        element.bind("keydown keypress", function (event) {
+            if(event.which === 13) {
+                scope.$apply(function (){
+                    scope.$eval(attrs.myEnter);
+                });
+
+                event.preventDefault();
+            }
+        });
+    };
+})
+
+
+.controller('View1Ctrl', ['$scope', 'Upload', '$timeout', '$http','focus',
+function ($scope, Upload, $timeout, $http, focus) {
 	$scope.lol = function(){
 		alert("numb");
 	};
 
     $scope.f;
     $scope.myForm;
+
+    $scope.formExamples = ["f1120w15", "lololol"]
     
 	$scope.uploadFiles = function(file) {
         $scope.f = file;
@@ -47,6 +93,36 @@ angular.module('myApp.view1', ['ngRoute'])
             console.log('Error');
         }
     };
+
+    $scope.nextStep = function(){
+        $scope.currentStep++;
+        focus('input'+$scope.currentStep);
+        $scope.scrollTo();
+    };
+
+    $scope.makeCurrentStep = function(index){
+        $scope.currentStep = index;
+        focus('input'+$scope.currentStep);
+        $scope.scrollTo();
+    };
+
+    $scope.scrollTo = function(){
+        var positon = $('#input'+$scope.currentStep).offset().top - 200;
+        $('html,body').animate({scrollTop: positon }, "slow");
+    };
+
+    $scope.currentStep = 0;
+
+    $http.get('http://formforme.cloudapp.net:5000/f1120w15/en').
+      then(function(response) {
+        console.log("lol", response);
+        $scope.formData = response.data.inputs;
+        focus('input'+$scope.currentStep);
+      }, function(response) {
+        console.log("chutiye");
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+    });
 
 
 }]);

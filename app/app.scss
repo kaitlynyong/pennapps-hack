@@ -150,10 +150,15 @@ button{
   width: 80%;
   max-width: 800px;
   padding-top: 250px;
+  padding-bottom: 400px;
   margin:auto;
   label, input{
     display: block;
     color: #ccc;
+  }
+  li, .current{
+    color: #ccc;
+    list-style: inherit;
   }
   label{
     font-size: 18px;
@@ -163,13 +168,13 @@ button{
     border:0;
     font-size: 32px;
   }
-  .current label{
+  .current label, .current{
     color: #666;
   }
   .current input{
     color: #111;
   }
   div.formField{
-    margin-bottom: 80px;
+    margin-bottom: 150px;
   }
 }

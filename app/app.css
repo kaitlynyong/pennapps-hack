@@ -119,21 +119,25 @@ button {
   width: 80%;
   max-width: 800px;
   padding-top: 250px;
+  padding-bottom: 400px;
   margin: auto; }
   .customForm label, .customForm input {
     display: block;
     color: #ccc; }
+  .customForm li, .customForm .current {
+    color: #ccc;
+    list-style: inherit; }
   .customForm label {
     font-size: 18px; }
   .customForm input {
     background: transparent;
     border: 0;
     font-size: 32px; }
-  .customForm .current label {
+  .customForm .current label, .customForm .current {
     color: #666; }
   .customForm .current input {
     color: #111; }
   .customForm div.formField {
-    margin-bottom: 80px; }
+    margin-bottom: 150px; }
 
 /*# sourceMappingURL=app.css.map */

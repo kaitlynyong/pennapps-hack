@@ -1,5 +1,5 @@
-<div id="step1" style="display:none;">
-	<div ngf-drop="uploadFiles($files)" class="dropBox" ngf-drag-over-class="dragover" ngf-multiple="true" ngf-pattern="'image/*,application/pdf'">
+<div id="step1 upload" style="">
+	<div ngf-drop="uploadFiles($files)" class="dropBox" ngf-drag-over-class="dragover" ngf-multiple="true" ngf-pattern="'image/*,application/pdf'" style="display:none;">
 		<div class="text" ng-hide="f">
 			<h2>Drop a file anywhere on the screen or select the button below to get started</h2>
 			<button class="btn" type="file" ngf-select="uploadFiles($file)"> Select a File to Upload</button>
@@ -21,23 +21,24 @@
 			<button class="btn">Continue</button>
 		</div>
   	</div>
+
+  	<div class="notTypeForm">
+  		<input type="text" ng-model="formName" typeahead="formExample for formExample in formExamples | filter:$viewValue | limitTo:1" placeholder="Begin typing to select a government form" class="form-control" />
+  	</div>
 </div>
+
+
 
 <div id="step2">
 	<form class="customForm">
-		<div class="formField current">
-			<label>First Name:</label>
-			<input type="text" name="f_name" ng-model="myForm.f_name"/>
+	<ol>
+		<div class="formField" ng-repeat="formInput in formData track by $index" ng-class="{current : $index==currentStep}" ng-click="makeCurrentStep($index)">
+			<li>
+			<label>{{formInput.name}}</label>
+			<input type="{{formInput.type}}" ng-model="formInput.value" id="input{{$index}}" my-enter="nextStep()"/>
+			</li>
 		</div>
-
-		<div class="formField">
-			<label>First Name:</label>
-			<input type="text" name="f_name" ng-model="myForm.f_name"/>
-		</div>
-
-		<div class="formField">
-			<label>Last Name:</label>
-			<input type="text" name="l_name" ng-model="myForm.l_name"/>
-		</div>
+	</ol>
+	<button class="btn" ng-click="submitForm">Submit</button>
 	</form>
 </div>
