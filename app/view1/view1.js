@@ -60,7 +60,27 @@ function ($scope, Upload, $timeout, $http, focus) {
 
     $scope.f;
     $scope.myForm;
+    $scope.process = 1;
+    $scope.formName;
+    $scope.loaded = false;
 
+    $scope.nextProcess = function(){
+        $scope.process++;
+
+        if($scope.process == 2){
+            $http.get('http://formforme.cloudapp.net:5000/'+$scope.formName+'/en-fr').
+              then(function(response) {
+                console.log("lol", response);
+                $scope.loaded = true;
+                $scope.formData = response.data;
+                focus('input'+$scope.currentStep);
+              }, function(response) {
+                console.log("chutiye");
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+            });
+        }
+    };
     $scope.formExamples = ["f1120w15", "lololol"]
     
 	$scope.uploadFiles = function(file) {
@@ -113,16 +133,6 @@ function ($scope, Upload, $timeout, $http, focus) {
 
     $scope.currentStep = 0;
 
-    $http.get('http://formforme.cloudapp.net:5000/f1120w15/en').
-      then(function(response) {
-        console.log("lol", response);
-        $scope.formData = response.data;
-        focus('input'+$scope.currentStep);
-      }, function(response) {
-        console.log("chutiye");
-        // called asynchronously if an error occurs
-        // or server returns response with an error status.
-    });
 
     $scope.submitForm = function(){
         console.log("sent");
@@ -138,4 +148,5 @@ function ($scope, Upload, $timeout, $http, focus) {
         });
     };
 
+    focus('startInput');
 }]);

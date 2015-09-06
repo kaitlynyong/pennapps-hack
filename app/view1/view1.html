@@ -1,4 +1,4 @@
-<div id="step1 upload" style="">
+<div id="step1 upload" ng-show="process == 1">
 	<div ngf-drop="uploadFiles($files)" class="dropBox" ngf-drag-over-class="dragover" ngf-multiple="true" ngf-pattern="'image/*,application/pdf'" style="display:none;">
 		<div class="text" ng-hide="f">
 			<h2>Drop a file anywhere on the screen or select the button below to get started</h2>
@@ -23,13 +23,15 @@
   	</div>
 
   	<div class="notTypeForm">
-  		<input type="text" ng-model="formName" typeahead="formExample for formExample in formExamples | filter:$viewValue | limitTo:1" placeholder="Begin typing to select a government form" class="form-control" />
+  		<input type="text" ng-model="formName" typeahead="formExample for formExample in formExamples | filter:$viewValue | limitTo:1" placeholder="Begin typing to select a government form" class="form-control" id="startInput"/><br>
+  		<button class="btn" ng-click="nextProcess()">Continue</button>
   	</div>
 </div>
 
 
 
-<div id="step2">
+<div id="step2" ng-show="process == 2">
+	<h1>{{formName}}</h1>
 	<form class="customForm">
 	<ol>
 		<div class="formField" ng-repeat="formInput in formData.inputs track by $index" ng-class="{current : $index==currentStep}" ng-click="makeCurrentStep($index)">
@@ -39,6 +41,7 @@
 			</li>
 		</div>
 	</ol>
+	<i class="fa fa-spinner fa-spin fa-2x" ng-hide="loaded"></i>
 	<button class="btn" ng-click="submitForm()">Submit</button>
 	</form>
 </div>

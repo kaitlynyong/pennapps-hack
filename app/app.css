@@ -151,4 +151,32 @@ button {
   .customForm div.formField {
     margin-bottom: 150px; }
 
+.notTypeForm {
+  padding: 200px 20px;
+  text-align: center; }
+  .notTypeForm input {
+    background: transparent;
+    font-size: 40px;
+    outline: none;
+    border: none;
+    width: 800px; }
+  .notTypeForm ul {
+    font-size: 32px;
+    list-style: none; }
+    .notTypeForm ul a {
+      text-decoration: none;
+      color: #ccc; }
+
+#step2 h1 {
+  text-align: center;
+  color: #eee;
+  background: #F24671;
+  margin-top: 0px;
+  position: fixed;
+  width: 100%;
+  padding: 20px; }
+
+i.fa {
+  color: #F24671; }
+
 /*# sourceMappingURL=app.css.map */

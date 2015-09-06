@@ -11,6 +11,7 @@
     "angular-loader": "~1.4.0",
     "angular-mocks": "~1.4.0",
     "html5-boilerplate": "~5.2.0",
-    "ng-file-upload": "~7.0.17"
+    "ng-file-upload": "~7.0.17",
+    "angular-bootstrap": "~0.13.4"
   }
 }
