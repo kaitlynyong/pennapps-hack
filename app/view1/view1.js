@@ -52,8 +52,8 @@ angular.module('myApp.view1', ['ngRoute'])
 })
 
 
-.controller('View1Ctrl', ['$scope', 'Upload', '$timeout', '$http','focus',
-function ($scope, Upload, $timeout, $http, focus) {
+.controller('View1Ctrl', ['$scope', 'Upload', '$timeout', '$http','focus','$window',
+function ($scope, Upload, $timeout, $http, focus, $window) {
 	$scope.lol = function(){
 		alert("numb");
 	};
@@ -164,8 +164,12 @@ function ($scope, Upload, $timeout, $http, focus) {
         
         $.post( 'http://formforme.cloudapp.net:5000/'+$scope.formName, $scope.formData)
           .done(function( data ) {
-            console.log( "Data Loaded: " + data );
+            window.setTimeout(function(){
+                $window.open('http://formforme.cloudapp.net:5000/pdfs/output.pdf');
+            }, 1000);
           });
+
+          
 
         // $http({
         //     url: 'http://formforme.cloudapp.net:5000/'+$scope.formName,
