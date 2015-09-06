@@ -200,7 +200,7 @@ button{
     font-size: 40px;
     outline: none;
     border:none;
-    width: 800px;
+    width: 710px;
   }
   ul{
     font-size: 32px;
@@ -208,6 +208,21 @@ button{
     a{
       text-decoration: none;
       color: #ccc;
+    }
+  }
+  .languages{
+    margin-bottom: 40px;
+    a{
+      background: #ccc;
+      padding: 8px 16px;
+      cursor:pointer;
+    }
+    a:hover{
+      background: #fff;
+    }
+    a.selected{
+      background: $pink;
+      color: #fff;
     }
   }
 }
@@ -225,3 +240,4 @@ button{
 i.fa{
   color:$pink;
 }
+

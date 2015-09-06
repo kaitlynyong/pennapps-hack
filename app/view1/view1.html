@@ -23,6 +23,10 @@
   	</div>
 
   	<div class="notTypeForm">
+  		<div class="languages">
+  			<a ng-repeat="(language, code) in languages" ng-class="{selected: language == currentLanguage}" ng-click="selectLanguage(language)">{{language}}
+  			</a>
+  		</div>
   		<input type="text" ng-model="formName" typeahead="formExample for formExample in formExamples | filter:$viewValue | limitTo:1" placeholder="Begin typing to select a government form" class="form-control" id="startInput"/><br>
   		<button class="btn" ng-click="nextProcess()">Continue</button>
   	</div>
@@ -37,11 +41,12 @@
 		<div class="formField" ng-repeat="formInput in formData.inputs track by $index" ng-class="{current : $index==currentStep}" ng-click="makeCurrentStep($index)">
 			<li>
 			<label>{{formInput.name}}</label>
-			<input type="{{formInput.type}}" ng-model="formInput.value" id="input{{$index}}" my-enter="nextStep()"/>
+			<input type="{{formInput.type}}" ng-model="formInput.value" id="input{{$index}}" my-enter="nextStep()" required/>
 			</li>
 		</div>
 	</ol>
 	<i class="fa fa-spinner fa-spin fa-2x" ng-hide="loaded"></i>
+	<p ng-show="error">Sorry, An error occured. Please try again later.</p>
 	<button class="btn" ng-click="submitForm()">Submit</button>
 	</form>
 </div>

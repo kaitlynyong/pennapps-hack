@@ -64,24 +64,38 @@ function ($scope, Upload, $timeout, $http, focus) {
     $scope.formName;
     $scope.loaded = false;
 
+    $scope.languages = {
+        english: "en",
+        spanish: "en-us",
+        french: "en-fr",
+        korean: "en-ko",
+        japanese: "en-ja"
+    };
+    $scope.error = false;
+    $scope.currentLanguage = "english";
+
+    $scope.selectLanguage  = function(language){
+        $scope.currentLanguage = language;        
+    };
+
     $scope.nextProcess = function(){
         $scope.process++;
 
         if($scope.process == 2){
-            $http.get('http://formforme.cloudapp.net:5000/'+$scope.formName+'/en-fr').
+            $http.get('http://formforme.cloudapp.net:5000/'+$scope.formName+'/'+$scope.languages[$scope.currentLanguage]).
               then(function(response) {
-                console.log("lol", response);
                 $scope.loaded = true;
                 $scope.formData = response.data;
                 focus('input'+$scope.currentStep);
               }, function(response) {
-                console.log("chutiye");
+                $scope.error = true;
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
             });
         }
     };
-    $scope.formExamples = ["f1120w15", "lololol"]
+    $scope.formExamples = ["f990sn-14", "f1099a-15", "f1120w15", "fw10_accessible" ]
+
     
 	$scope.uploadFiles = function(file) {
         $scope.f = file;
@@ -136,16 +150,40 @@ function ($scope, Upload, $timeout, $http, focus) {
 
     $scope.submitForm = function(){
         console.log("sent");
-        $http.put('http://formforme.cloudapp.net:5000/f1120w15', {"message": "Rishabh"}).
-          then(function(response) {
-            console.log("success", response);
-            // this callback will be called asynchronously
-            // when the response is available
-          }, function(response) {
-            console.log("error", response);
-            // called asynchronously if an error occurs
-            // or server returns response with an error status.
-        });
+        
+        $.post( 'http://formforme.cloudapp.net:5000/'+$scope.formName, $scope.formData)
+          .done(function( data ) {
+            console.log( "Data Loaded: " + data );
+          });
+
+        // $http({
+        //     url: 'http://formforme.cloudapp.net:5000/'+$scope.formName,
+        //     method: 'POST',
+        //     dataType: 'json',
+        //     data: $scope.formData,
+        //     headers: {
+        //         "Content-Type": "x-www-form-urlencoded"
+        //     }
+
+        // }).success(function(response){
+        //     console.log($scope.formData);
+        //     console.log('success', response);
+        // }).error(function(error){
+        //     console.log('error');
+        // });
+
+        // $http.post('http://formforme.cloudapp.net:5000/'+$scope.formName, JSON.stringify({message: "Rishabh"})).
+        //   then(function(response) {
+        //     console.log("yes", response);
+        //     // this callback will be called asynchronously
+        //     // when the response is available
+        //   }, function(response) {
+        //     console.log("no");
+        //     // called asynchronously if an error occurs
+        //     // or server returns response with an error status.
+        //   });
+
+
     };
 
     focus('startInput');
