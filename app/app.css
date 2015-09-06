@@ -28,17 +28,46 @@ body {
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 250px;
+  padding-top: 200px;
   padding-bottom: 250px;
-  text-align: center; }
+  text-align: center;
+  background-position: 0 -120px; }
+  #content h1.hero {
+    font-weight: 400;
+    color: #333;
+    font-size: 36px;
+    text-transform: uppercase;
+    font-family: Montserrat; }
+  #content input.splashText {
+    padding: 10px 20px;
+    font-size: 32px;
+    line-height: 1.5;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    outline: none;
+    border: none;
+    border: 1px solid #ccc;
+    display: block;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #333; }
 
 .box {
   background-color: #F24671;
   width: 100%;
-  padding: 25px;
+  padding: 20px;
   border: 0px;
   margin: 0px;
-  text-align: center; }
+  text-align: center;
+  color: #fff; }
+  .box p {
+    color: #fff;
+    margin-bottom: 0; }
+  .box i.fa {
+    color: #BF3A5B;
+    margin-left: 2px;
+    margin-right: 2px; }
 
 .button {
   background-color: #FFF; }
@@ -52,38 +81,59 @@ body {
   border: 0px;
   margin: 0px; }
 
+span.pink {
+  color: #F24671;
+  font-family: Montserrat; }
+
 button {
   padding: 0;
   border: 0;
   background: transparent; }
 
 .btnCustom {
-  border-radius: 30px;
+  border-radius: 4px;
   padding: 8px 20px;
   background: #F24671;
   color: #fff;
-  margin: 20px;
-  border-bottom: 2px solid #B02044; }
+  margin-top: 20px;
+  border-bottom: 2px solid #B02044;
+  font-family: Montserrat;
+  font-size: 14px;
+  text-transform: uppercase; }
 
 .btnCustom:hover {
-  border-radius: 30px;
   background: #F62459;
-  color: #fff;
-  margin: 20px; }
+  color: #fff; }
 
 .btnCustom:active {
-  border-radius: 30px;
   background: #B02044;
-  color: #fff;
-  margin: 20px; }
+  color: #fff; }
+
+.marginTop40 {
+  margin-top: 40px; }
 
 .how-it-works {
   background-color: #fff;
   width: 100%;
-  padding: 25px;
   border: 0px;
   margin: 0px;
-  text-align: center; }
+  text-align: center;
+  padding: 60px 20px 80px 20px; }
+  .how-it-works h1 {
+    color: #F24671;
+    font-weight: 100;
+    font-family: Montserrat;
+    text-transform: uppercase; }
+  .how-it-works h4 {
+    color: #999;
+    font-weight: 300; }
+  .how-it-works img {
+    width: 80%;
+    max-width: 100px; }
+  .how-it-works p {
+    width: 80%;
+    max-width: 220px;
+    margin: auto; }
 
 #step1 {
   height: 100vh;

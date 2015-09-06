@@ -9,6 +9,24 @@ angular.module('myApp.landing', ['ngRoute'])
   });
 }])
 
-.controller('landingCtrl', [function() {
+.controller('landingCtrl', ['$location', '$scope',
+function($location, $scope) {
+	$(document).ready(function(){
+		var text = "formsfor.me";
+		var index = 0;
+		var stringy = "";
+		$(".splashText").focus();
+		window.setTimeout(function(){
+			window.setInterval(function(){
+				if(index < text.length){
+					stringy += text[index++];
+					$(".splashText").val(stringy);	
+				}
+			}, 100);	
+		}, 1000);
+	});
 
+	$scope.start = function(){
+		$location.url('/app');
+	};
 }]);

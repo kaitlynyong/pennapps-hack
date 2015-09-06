@@ -45,7 +45,7 @@
 			</li>
 		</div>
 	</ol>
-	<i class="fa fa-spinner fa-spin fa-2x" ng-hide="loaded"></i>
+	<p ng-hide="loaded || error"><i class="fa fa-spinner fa-spin fa-2x"></i></p>
 	<p ng-show="error">Sorry, An error occured. Please try again later.</p>
 	<button class="btnCustom" ng-click="submitForm()">Submit</button>
 	</form>
