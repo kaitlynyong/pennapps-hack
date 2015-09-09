@@ -12,7 +12,7 @@ angular.module('myApp.landing', ['ngRoute'])
 .controller('landingCtrl', ['$location', '$scope',
 function($location, $scope) {
 	$(document).ready(function(){
-		var text = "formsfor.me";
+		var text = "formfor.me";
 		var index = 0;
 		var stringy = "";
 		$(".splashText").focus();
